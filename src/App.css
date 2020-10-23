@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrap-top {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wrap-login {
+  min-width: 30%;
+  height: 350px;
+  margin: 10px;
+  background-color: aliceblue;
+}
+
+.wrap-signup {
+  min-width: 30%;
+  height: 350px;
+  margin: 10px;
+  background-color: aliceblue;
+}
+
+.header-auth, .header-page {
+  background-color: mediumaquamarine;
+  margin: 0 0 10px;
+  padding: 10px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-page{
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.wrap-header-page{
+  display: flex;
+}
+
+.header-auth span {
+  font-size: 1.5rem;
+}
+
+.header-page h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+input {
+  width: 80%;
+  margin: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+textarea {
+  width: 80%;
+  height: 100px;
+  margin: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+button {
+  width: 150px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  background-color: lightblue;
+  border: 2px solid steelblue;
+  border-radius: 5px;
+}
+
+.btn-google {
+  margin-top: 20px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.wrap-home {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.wrap-create-memo{
+  width:45%;
+  height: 210px;
+  margin-left: 30px;
+  padding-top: 10px;
+  text-align: center;
+  background-color: cornflowerblue;
+}
+
+.wrap-memo-list{
+  width:45%;
+  margin-right: 30px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.wrap-update-delete-memo button{
+  display: inline-block;
+}
+
+hr {
+  width: 90%;
+  border-color: whitesmoke;
+}
+
+.loading {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.wrap-home p {
+  font-size: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 720px) {
+  .wrap-top {
+    flex-direction: column;
   }
 }

@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { FirebaseProvider } from './firebase'
+import PrivateRoute from './PrivateRoute'
+import Top from './pages/Top'
+import Home from './pages/Home'
+import paths from './paths'
+import './App.css'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <FirebaseProvider>
+      <BrowserRouter>
+        <Switch>
+          <div>
+            <Route exact path={paths.top} component={Top} />
+            <PrivateRoute exact path={paths.home}>
+              <Home />
+            </PrivateRoute>
+          </div>
+        </Switch>
+      </BrowserRouter>
+    </FirebaseProvider>
+  )
 }
 
-export default App;
+export default App
