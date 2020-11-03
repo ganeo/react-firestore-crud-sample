@@ -13,9 +13,10 @@ jobs:
       REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID}}
       REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET}}
       REACT_APP_FIREBASE_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_SENDER_ID}}
+      CI: false
     steps:
       - uses: actions/checkout@v2
-      - run: yarn --frozen-lockfile && CI=false yarn run build
+      - run: yarn --frozen-lockfile && yarn run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
